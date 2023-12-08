@@ -23,9 +23,10 @@ bot.on('message', async (ctx) => {
   try {
     console.log(ctx.message?.forward_from_chat.id)
     console.log(ctx.message?.forward_from_message_id)
-    let postId = ctx.message?.forward_from_chat.id + ctx.message?.forward_from_message_id;
-    let isPostUser = await newPost(postId)
-    if (isPostUser) {
+    let postId = parseInt(ctx.message?.forward_from_chat.id + "" + ctx.message?.forward_from_message_id);
+    console.log(postId)
+    let isPost = await newPost(postId)
+    if (isPost) {
       ctx.telegram.forwardMessage(process.env.TELEGRAM_CHAT_ID, ctx.message?.forward_from_chat.id, ctx.message?.forward_from_message_id) 
       return ctx.reply('Added post to db!')
     }
