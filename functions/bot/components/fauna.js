@@ -17,3 +17,18 @@ exports.newUser = (id) => {
     });
   })
 }
+
+exports.newPost = (id) => {
+  return new Promise((res, rej) => {
+    client.query(
+      q.Create(
+        q.Collection('post'),
+        { data: { postId: id } },
+      )
+    ).then(ret => {
+      res(true)
+    }).catch(err => {
+      res(false)
+    });
+  })
+}
