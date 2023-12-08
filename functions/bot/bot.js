@@ -19,12 +19,12 @@ exports.handler = async event => {
 
 }
 
-bot.on('message', (ctx) => {
+bot.on('message', async (ctx) => {
   try {
     console.log(ctx.message?.forward_from_chat.id)
     console.log(ctx.message?.forward_from_message_id)
     let postId = ctx.message?.forward_from_chat.id + ctx.message?.forward_from_message_id;
-    let isPostUser = await newPost(id)
+    let isPostUser = await newPost(postId)
     if (isPostUser) {
       return ctx.reply('Added post to db!')
     }
