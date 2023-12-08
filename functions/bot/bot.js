@@ -35,7 +35,7 @@ bot.on('message', async (ctx) => {
       return ctx.reply('Post is already inside db!')
     }
   } catch (error) {
-    return ctx.reply(`Error occured`)
+    console.log(ctx);
   }
 })
 
