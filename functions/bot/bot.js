@@ -17,3 +17,8 @@ exports.handler = async event => {
   }
 
 }
+
+bot.on('message', (ctx) => {
+  console.log(ctx.message.text)
+  ctx.reply(ctx.message.text.toUpperCase())
+})
