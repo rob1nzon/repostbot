@@ -19,6 +19,6 @@ exports.handler = async event => {
 }
 
 bot.on('message', (ctx) => {
-  console.log(ctx.message.forward_from_chat)
-  ctx.reply(ctx.message.forward_from_chat)
+  console.log(ctx.message.message_id)
+  ctx.reply(ctx.message.message_id)
 })
