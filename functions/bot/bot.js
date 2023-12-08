@@ -20,5 +20,5 @@ exports.handler = async event => {
 
 bot.on('message', (ctx) => {
   console.log(ctx.message.message_id)
-  ctx.reply(ctx.message.message_id)
+  ctx.reply('ok')
 })
