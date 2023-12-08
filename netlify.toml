@@ -4,6 +4,7 @@
 [template.environment]
   FAUNA_SECRET_KEY = "FaunaDB secret key here"
   TELEGRAM_BOT_TOKEN = "Telegram bot token here"
+  TELEGRAM_CHAT_ID = "Telegram chat id here"
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
