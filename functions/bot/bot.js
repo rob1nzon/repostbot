@@ -36,6 +36,7 @@ bot.on('message', async (ctx) => {
     }
   } catch (error) {
     console.log(ctx);
+    console.log(ctx?.update?.message?.chat);
   }
 })
 
