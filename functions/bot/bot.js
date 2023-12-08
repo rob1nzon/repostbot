@@ -27,15 +27,13 @@ bot.on('message', (ctx) => {
     let isPostUser = await newPost(id)
     if (isPostUser) {
       return ctx.reply('Added post to db!')
-    }else{
+    }
+    else
+    {
       return ctx.reply('Post is already inside db!')
     }
-   
-    } catch (e) {
-      return ctx.reply(`Error occured`)
-    }
   } catch (error) {
-    console.error(error)
+    return ctx.reply(`Error occured`)
   }
 })
 
