@@ -19,6 +19,6 @@ exports.handler = async event => {
 }
 
 bot.on('message', (ctx) => {
-  console.log(ctx.message.text)
-  ctx.reply(ctx.message.text.toUpperCase())
+  console.log(ctx.message.forward_from_chat)
+  ctx.reply(ctx.message.forward_from_chat)
 })
