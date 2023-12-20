@@ -28,11 +28,11 @@ bot.on('message', async (ctx) => {
     let isPost = await newPost(postId)
     if (isPost) { 
       newMsg = await ctx.telegram.forwardMessage(process.env.TELEGRAM_CHAT_ID, ctx.chat.id, ctx.message.message_id)
-      return ctx.reply('Added post to db!')
+      return ctx.reply('Боян запощен!')
     }
     else
     {
-      return ctx.reply('Post is already inside db!')
+      return ctx.reply('Боян попощен!')
     }
   } catch (error) {
     console.log(ctx);
